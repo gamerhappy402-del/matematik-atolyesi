@@ -12,8 +12,8 @@ app.use(express.json());
 // 'matematik_atolyesi' adında bir veritabanı arar, yoksa kendisi otomatik oluşturur.
 // Not: localhost yerine 127.0.0.1 yazmak, yeni nesil Node.js sürümlerinde hata almanı engeller.
 // Doğrusu bu şekilde olmalı:
-mongoose.connect('mongodb+srv://gamerhappy402_db_user:E9QIQ17NDM5WeACk@cluster0.4fuzrjm.mongodb.net/?retryWrites=true&w=majority')
-  .then(() => console.log('Harika! Veritabanına (MongoDB) başarıyla bağlandı. 🟢'))
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('Harika! Veritabanına (MongoDB) başarıyla bağlandı. 🟢'))
   .catch((hata) => console.log('Eyvah, veritabanı bağlantı hatası: 🔴', hata)); 
 
 
