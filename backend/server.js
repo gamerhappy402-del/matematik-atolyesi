@@ -87,7 +87,7 @@ app.delete('/api/videolar/:id', async (req, res) => {
 
 
 // Sunucunun dinleyeceği kapı numarası (Port)
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Sunucu ayağa kalktı! Şu adreste çalışıyor: http://localhost:${PORT}`);
